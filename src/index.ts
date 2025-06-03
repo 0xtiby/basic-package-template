@@ -12,6 +12,13 @@ export class YourClass {
   public method(): string {
     return "Hello from your package!";
   }
+
+  /**
+   * New method to test automated workflow
+   */
+  public getVersion(): string {
+    return "1.3.0-dev";
+  }
 }
 
 // Default export
