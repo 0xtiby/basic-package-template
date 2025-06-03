@@ -1,0 +1,45 @@
+{
+  "name": "package-name",
+  "version": "1.0.0",
+  "description": "Package description",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup ./src",
+    "release:patch": "pnpm version patch && git push && git push --tags && pnpm build && pnpm publish",
+    "release:minor": "pnpm version minor && git push && git push --tags && pnpm build && pnpm publish",
+    "release:major": "pnpm version major && git push && git push --tags && pnpm build && pnpm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xtiby/package-name.git"
+  },
+  "keywords": [],
+  "author": "0xtiby <https://github.com/0xtiby>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0xtiby/package-name/issues"
+  },
+  "homepage": "https://github.com/0xtiby/package-name#readme",
+  "devDependencies": {
+    "@types/parse": "^3.0.9",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "parse-server": "^8.0.0"
+  }
+}
