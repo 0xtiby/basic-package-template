@@ -151,6 +151,8 @@ feat!: remove deprecated API endpoints
 6. A new release is created if significant changes are detected
 7. The package is published to npm
 8. A GitHub release with changelog is generated
+9. 🤖 **Automated repo update**: A pull request is automatically created to update `package.json` version and `CHANGELOG.md`
+10. Review and merge the automated PR to keep your repository in sync
 
 ## License
 
