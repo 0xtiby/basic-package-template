@@ -33,9 +33,33 @@ Description of your main export.
 
 ## Development
 
-### Repository Security Setup
+### 🔧 Quick Setup
 
-To secure your repository and enforce proper workflow, configure branch protection rules:
+To quickly set up branch protection rules, run the automated script:
+
+```bash
+# Make sure you have GitHub CLI installed and authenticated
+gh auth login
+
+# Run the setup script (choose one method)
+./scripts/setup-branch-protection.sh
+# or
+npm run setup:branch-protection
+```
+
+This script will automatically:
+
+- ✅ Detect your main branch (main/master)
+- ✅ Configure branch protection rules
+- ✅ Require pull requests before merging
+- ✅ Require at least 1 approval
+- ✅ Dismiss stale reviews on new commits
+- ✅ Disable force pushes and deletions
+- ✅ Apply rules to administrators
+
+### Manual Repository Security Setup (Alternative)
+
+If you prefer manual setup, configure branch protection rules:
 
 #### Branch Protection Rules
 
