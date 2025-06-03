@@ -39,12 +39,8 @@
     "@semantic-release/github": "^9.2.6",
     "@semantic-release/npm": "^11.0.2",
     "@semantic-release/release-notes-generator": "^12.1.0",
-    "@types/parse": "^3.0.9",
     "semantic-release": "^23.0.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "parse-server": "^8.0.0"
   }
 }
