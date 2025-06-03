@@ -1,5 +1,5 @@
 {
-  "name": "package-name",
+  "name": "basic-package-template",
   "version": "1.0.0",
   "description": "Package description",
   "files": [
@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xtiby/package-name.git"
+    "url": "git+https://github.com/0xtiby/basic-package-template.git"
   },
   "keywords": [],
   "author": "0xtiby <https://github.com/0xtiby>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/0xtiby/package-name/issues"
+    "url": "https://github.com/0xtiby/basic-package-template/issues"
   },
-  "homepage": "https://github.com/0xtiby/package-name#readme",
+  "homepage": "https://github.com/0xtiby/basic-package-template#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.1.0",
