@@ -18,7 +18,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup ./src"
+    "build": "tsup ./src",
+    "setup:branch-protection": "./scripts/setup-branch-protection.sh"
   },
   "repository": {
     "type": "git",
