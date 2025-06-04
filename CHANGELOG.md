@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.4.0](https://github.com/0xtiby/basic-package-template/releases/tag/v1.4.0) (2025-06-04)
+
+# [1.4.0](https://github.com/0xtiby/basic-package-template/compare/v1.3.0...v1.4.0) (2025-06-04)
+
+
+### Features
+
+* enhance README and script to configure GitHub Actions permissions for PR creation and approval ([4f79330](https://github.com/0xtiby/basic-package-template/commit/4f79330e5dc9d70741bfbaa519656a22b26f4523))
+
+
+
+
+
 ## [v1.3.0](https://github.com/0xtiby/basic-package-template/releases/tag/v1.3.0) (2025-06-03)
 
 # [1.3.0](https://github.com/0xtiby/basic-package-template/compare/v1.2.1...v1.3.0) (2025-06-03)
