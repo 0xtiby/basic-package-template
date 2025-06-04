@@ -11,7 +11,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo -e "${YELLOW}🔧 Setting up branch protection rules...${NC}"
+echo -e "${YELLOW}🔧 Setting up branch protection rules and repository configuration...${NC}"
 
 # Check if gh CLI is installed
 if ! command -v gh &> /dev/null; then
@@ -67,6 +67,16 @@ gh api repos/${REPO}/branches/${MAIN_BRANCH}/protection \
 rm /tmp/branch-protection.json
 
 echo -e "${GREEN}✅ Branch protection rules successfully applied!${NC}"
+
+# Configure GitHub Actions permissions
+echo -e "${YELLOW}🤖 Configuring GitHub Actions permissions...${NC}"
+
+# Set workflow permissions to allow creating and approving PRs
+gh api repos/${REPO}/actions/permissions/workflow \
+  --method PUT \
+  --field can_approve_pull_request_reviews=true
+
+echo -e "${GREEN}✅ GitHub Actions permissions successfully configured!${NC}"
 echo -e "${GREEN}🎉 Your repository is now secured with:${NC}"
 echo -e "   • Pull requests required before merging"
 echo -e "   • At least 1 approval required"
@@ -74,6 +84,7 @@ echo -e "   • Stale reviews dismissed on new commits"
 echo -e "   • Force pushes disabled"
 echo -e "   • Branch deletions disabled"
 echo -e "   • Rules apply to administrators"
+echo -e "   • GitHub Actions can create and approve pull requests"
 
 echo -e "\n${YELLOW}💡 Next steps:${NC}"
 echo -e "   1. Add status checks if you have CI/CD workflows"
