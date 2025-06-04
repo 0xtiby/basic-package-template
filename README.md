@@ -56,6 +56,38 @@ This script will automatically:
 - ✅ Dismiss stale reviews on new commits
 - ✅ Disable force pushes and deletions
 - ✅ Apply rules to administrators
+- ✅ **Allow GitHub Actions to create and approve pull requests**
+
+#### 🤖 GitHub Actions Permissions
+
+The script automatically configures GitHub Actions to create and approve pull requests. This is essential for:
+
+- **Automated releases**: Allows semantic-release to create PRs for version bumps and changelog updates
+- **Dependency updates**: Enables Dependabot and other bots to create PRs
+- **Automated workflows**: Permits GitHub Actions to interact with pull requests
+
+**To modify this behavior:**
+
+```bash
+# Disable GitHub Actions PR creation/approval
+gh api repos/OWNER/REPO/actions/permissions/workflow \
+  --method PUT \
+  --field can_approve_pull_request_reviews=false
+
+# Re-enable GitHub Actions PR creation/approval
+gh api repos/OWNER/REPO/actions/permissions/workflow \
+  --method PUT \
+  --field can_approve_pull_request_reviews=true
+```
+
+**To allow administrators to bypass branch protection:**
+
+```bash
+# Edit the script and change line 54 to:
+"enforce_admins": false
+```
+
+Or manually in GitHub: Settings → Branches → Edit rule → Uncheck "Include administrators"
 
 ### Manual Repository Security Setup (Alternative)
 
