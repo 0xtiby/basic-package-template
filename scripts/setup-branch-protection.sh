@@ -87,6 +87,5 @@ echo -e "   • Rules apply to administrators"
 echo -e "   • GitHub Actions can create and approve pull requests"
 
 echo -e "\n${YELLOW}💡 Next steps:${NC}"
-echo -e "   1. Add status checks if you have CI/CD workflows"
-echo -e "   2. Configure NPM_TOKEN secret for automated releases"
-echo -e "   3. Start using conventional commits (feat:, fix:, etc.)" 
+echo -e "   1. Configure trusted publisher in npm UI (if not done yet)"
+echo -e "   2. Start using conventional commits (feat:, fix:, etc.)" 
