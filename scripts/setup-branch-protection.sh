@@ -46,7 +46,7 @@ cat > /tmp/branch-protection.json << 'EOF'
     "strict": true,
     "contexts": []
   },
-  "enforce_admins": true,
+  "enforce_admins": false,
   "required_pull_request_reviews": {
     "required_approving_review_count": 1,
     "dismiss_stale_reviews": true,
@@ -83,7 +83,7 @@ echo -e "   • At least 1 approval required"
 echo -e "   • Stale reviews dismissed on new commits"
 echo -e "   • Force pushes disabled"
 echo -e "   • Branch deletions disabled"
-echo -e "   • Rules apply to administrators"
+echo -e "   • Admins can bypass rules (merge without waiting)"
 echo -e "   • GitHub Actions can create and approve pull requests"
 
 echo -e "\n${YELLOW}💡 Next steps:${NC}"
