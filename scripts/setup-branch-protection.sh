@@ -46,7 +46,7 @@ cat > /tmp/branch-protection.json << 'EOF'
     "strict": true,
     "contexts": []
   },
-  "enforce_admins": true,
+  "enforce_admins": false,
   "required_pull_request_reviews": {
     "required_approving_review_count": 1,
     "dismiss_stale_reviews": true,
@@ -83,10 +83,9 @@ echo -e "   • At least 1 approval required"
 echo -e "   • Stale reviews dismissed on new commits"
 echo -e "   • Force pushes disabled"
 echo -e "   • Branch deletions disabled"
-echo -e "   • Rules apply to administrators"
+echo -e "   • Admins can bypass rules (merge without waiting)"
 echo -e "   • GitHub Actions can create and approve pull requests"
 
 echo -e "\n${YELLOW}💡 Next steps:${NC}"
-echo -e "   1. Add status checks if you have CI/CD workflows"
-echo -e "   2. Configure NPM_TOKEN secret for automated releases"
-echo -e "   3. Start using conventional commits (feat:, fix:, etc.)" 
+echo -e "   1. Configure trusted publisher in npm UI (if not done yet)"
+echo -e "   2. Start using conventional commits (feat:, fix:, etc.)" 
