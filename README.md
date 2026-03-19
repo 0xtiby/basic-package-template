@@ -7,7 +7,7 @@ Minimal npm package template with automated releases via OIDC trusted publishing
 1. **Create repo from template** on GitHub
 2. **Update `package.json`** — set `name`, `description`, `repository`, `bugs`, `homepage`
 3. **Run `pnpm install`**
-4. **Run `pnpm bootstrap`** — registers the package on npm using your local auth
+4. **Run `pnpm bootstrap` manually in your terminal** — registers the package on npm using your local auth. This must be run interactively (not from a script or CI) because npm requires 2FA/OTP confirmation.
 5. **Configure trusted publisher** in npm UI:
    - Go to your package's access settings on npmjs.com
    - Add GitHub Actions as a trusted publisher
