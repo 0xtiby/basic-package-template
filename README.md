@@ -23,13 +23,28 @@ Instead of storing an `NPM_TOKEN` secret, this template uses [npm's trusted publ
 
 The release workflow requests an `id-token: write` permission, and npm verifies the token came from your authorized repository and workflow.
 
+> **Note:** The GitHub Actions runner's bundled npm may be too old to support OIDC token exchange. The release workflow includes `npm install -g npm@latest` to ensure OIDC trusted publishing works correctly.
+
+### Versioning
+
+semantic-release determines versions from **git tags**, not `package.json`. The `version` field in `package.json` is set to `"0.0.0-development"` and is updated automatically during publish.
+
+**Important:** semantic-release defaults to `1.0.0` for the first release. If you want your first release to be `0.x.x`, create a git tag before your first push to `main`:
+
+```bash
+# To start at 0.1.0:
+git tag v0.1.0
+git push --tags
+```
+
+Without a pre-existing tag, all `feat:` commits in your history will be analyzed and the first release will be `1.0.0`.
+
 ### Release Flow
 
 1. Push to `main` with [conventional commits](https://www.conventionalcommits.org/)
-2. `semantic-release` determines the next version
+2. `semantic-release` determines the next version from git tags
 3. Publishes to npm with provenance
-4. Commits updated `CHANGELOG.md` and `package.json` back to the repo
-5. Creates a GitHub release
+4. Creates a GitHub release with changelog
 
 ### Conventional Commits
 
